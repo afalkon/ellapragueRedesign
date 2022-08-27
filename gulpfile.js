@@ -49,7 +49,8 @@ gulp.task('sassExp', function(){
 
 /* CSS concatination process. Write the src's of css files in gulp.src with (['./', './']) */
 gulp.task('cssConcat', function(){
-    return gulp.src(['node_modules/normalize.css/normalize.css'])
+    return gulp.src([   'node_modules/normalize.css/normalize.css',
+                        'node_modules/slick-carousel/slick/slick.css'])
     .pipe(concat('libs.min.css'))
     .pipe(sass({outputStyle: 'compressed'})).on('error', sass.logError)
     .pipe(gulp.dest('app/css'))
@@ -68,7 +69,8 @@ gulp.task('jsUgly', function(){
 
 /* JS concatination process. */
 gulp.task('jsConcat', function(){
-    return gulp.src(['markup/js/libs.js'])
+    return gulp.src([   'markup/js/libs.js',
+                        'node_modules/slick-carousel/slick/slick.min.js'])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('app/js'))
@@ -78,8 +80,8 @@ gulp.task('jsConcat', function(){
 
 /* Browser-Sync HTML server init */
 gulp.task('syncHtml', function() {
-    return browserSync.create().init({
-        proxy: "alexm/markup",
+    return browserSync.init({
+        proxy: "ellapragueRedesign/markup",
     })
     
 });

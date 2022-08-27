@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +9,153 @@
     <link rel="stylesheet" href="css/style.min.css">
     <title>Document</title>
 </head>
-<body>
-    <header class="header">
 
-    </header>
-    <h1 class="h1">Header</h1>
+<body>
+    <!--  Main screen section  -->
+    <section class="mainScreen" style="background-image: url('img/mainContent/mainScreenBg.jpg');">
+        <div class="container">
+            <header class="header">
+                <a href="#" class="header__logo">
+                    <p class="header__logo--name">Ильвира Рахманова</p>
+                    <p class="header__logo--desc">Лицензированный гид в Праге</p>
+                </a>
+                <nav class="header__menu">
+                    <ul class="header__menu--ul">
+                        <li class="header__menu--li"><a href="#tours" class="header__menu--link">Экскурсии</a></li>
+                        <li class="header__menu--li"><a href="#" class="header__menu--link">Обо мне</a></li>
+                        <li class="header__menu--li"><a href="#" class="header__menu--link">Отзывы</a></li>
+                        <li class="header__menu--li"><a href="#" class="header__menu--link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header__phone">
+                    <a href="tg://resolve?domain=ellaprague" class="header__phone--social"
+                        style="background-image: url('img/mainContent/telegramIcon.svg');"></a>
+                    <a href="https://wa.me/420777655867" class="header__phone--social"
+                        style="background-image: url('img/mainContent/whatsappIcon.svg');"></a>
+                    <a href="viber://chat?number=%2B420777655867" class="header__phone--social"
+                        style="background-image: url('img/mainContent/viberIcon.svg');"></a>
+                    <form action="" class="header__phone--form">
+                        <button class="header__phone--number">+420 777 655 867</button>
+                    </form>
+                </div>
+            </header>
+            <h1 class="mainScreen__heading">Индивидуальные и групповые экскурсии по Праге</h1>
+            <a href="" class="mainScreen__button">Заказать</a>
+        </div>
+    </section>
+
+    <!--  "Tours" section markup  -->
+    <section id="tours" class="tours">
+        <div class="container">
+            <div class="tours__top">
+                <div class="tours__heading--box">
+                    <h2 class="section__heading">Экскурсии</h2>
+                    <p class="section__heading--desc">По Чехии с лицензированным гидом</p>
+                </div>
+                <div class="tours__desc--box">
+                    <h3 class="tours__desc--heading">16 авторсикх экскурсий</h3>
+                    <p class="tours__desc--text">Что бы Вы не теряли время на поиск подходящих для вас экскурсий, я
+                        разделилa их на 6 основных групп</p>
+                </div>
+            </div>
+        </div>
+        <div class="tours__tabs">
+            <div class="tours__tabs--top">
+                <div id="1" class="tours__tabs--button active">Прага</div>
+                <div id="2" class="tours__tabs--button">Чешский крумлов</div>
+                <div id="3" class="tours__tabs--button">Дрезден</div>
+                <div id="4" class="tours__tabs--button">Карловы<br>Вары</div>
+                <div id="5" class="tours__tabs--button">Замки и природа</div>
+                <div id="6" class="tours__tabs--button">Пиво и еда</div>
+            </div>
+            <div class="tours__tabs--bottom">
+                <div id="1" class="tours__tab active"
+                    style="background-image: url('img/mainContent/toursPragueBg1.jpg');">
+                    <h3 class="tours__tabs--heading">Королева Восточной Европы</h3>
+                    <!--  Slider  -->
+                    <div class="container">
+                        <div class="tours__tabs--slider">
+                            <div class="tours__tabs--slide">
+                                <h2 class="tours__tabs--slide__heading">Обзорная экскурсия по Праге</h2>
+                                <p class="tours__tabs--slide__time">3 часа</p>
+                                <p class="tours__tabs--slide__type">Пешеходная экскурсия</p>
+                                <p class="tours__tabs--slide__desc">Индивидуальная обзорная экскурсия по Праге включает
+                                    в себя все основные достопримечательности Чешской столицы. Мы побываем во дворах
+                                    Пражского Града, увидим собор святого Вита, спустимся на Малую Сторону и пройдёмся
+                                    по брусчатке древнего Карлова моста. Неотъемлемой частью любой индивидуальной
+                                    экскурсии по Праге является Старый город, где мы послушаем бой “Пражских курантов”.
+                                    Новый город Пражский тоже не останется в стороне, и в рамках обзорной экскурсии мы
+                                    его посетим.
+                                </p>
+                                <a href="#contacts" class="tours__tabs--slide__link">Заказать</a>
+                            </div>
+                            <div class="tours__tabs--slide">
+                                <h2 class="tours__tabs--slide__heading">Экскурсия по Праге на машине</h2>
+                                <p class="tours__tabs--slide__time">4 часа</p>
+                                <p class="tours__tabs--slide__type">Автопешеходная экскурсия</p>
+                                <p class="tours__tabs--slide__desc">Обзорная экскурсия по Праге включает в себя все
+                                    основные достопримечательности Чешской столицы. Мы побываем во дворах Пражского
+                                    Града, увидим собор святого Вита, спустимся на Малую Сторону и пройдёмся по
+                                    брусчатке древнего Карлова моста. Неотъемлемой частью любой экскурсии по Праге
+                                    является Старый город, где мы послушаем бой “Пражских курантов”. Новый город
+                                    Пражский тоже не останется в стороне, и в рамках обзорной экскурсии мы его посетим.
+                                </p>
+                                <a href="#contacts" class="tours__tabs--slide__link">Заказать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  /Slider  -->
+                </div>
+                <div id="2" class="tours__tab"
+                    style="background-image: url('img/mainContent/toursCeskyKrumlovBg.jpg');">
+                    <h3 class="tours__tabs--heading">Чешский Крумлов</h3>
+                </div>
+                <div id="3" class="tours__tab" style="background-image: url('img/mainContent/toursDresdenBg.jpg');">
+                    <h3 class="tours__tabs--heading">Дрезден и красоты Саксонии</h3>
+                </div>
+                <div id="4" class="tours__tab" style="background-image: url('img/mainContent/toursKarlovyVaryBg.jpg');">
+                    <h3 class="tours__tabs--heading">Карловы Враы</h3>
+                </div>
+                <div id="5" class="tours__tab" style="background-image: url('img/mainContent/toursKarlstejnBg.jpg');">
+                    <h3 class="tours__tabs--heading">Замки и природа</h3>
+                </div>
+                <div id="6" class="tours__tab" style="background-image: url('img/mainContent/toursBeerBg.jpg');">
+                    <h3 class="tours__tabs--heading">Пиво и еда</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  /"Tours" section markup  -->
+
+    <!--  "Individual route" section markup  -->
+    <section class="individualRoute">
+        <div class="container">
+            <h2 class="individualRoute__heading">Нужен <span>индивидуальный</span> маршрут?</h2>
+            <p class="individualRoute__text">Напишите! И я составлю индивидуальную экскурсионную программу с учетом
+                ваших пожеланий.</p>
+            <a href="#contacts" class="individualRoute__link">Связаться</a>
+        </div>
+    </section>
+    <!--  /"Individual tour" section markup  -->
+
+    <!--  "About me" section  -->
+    <section class="about">
+        <div class="container">
+            <div class="about__inner">
+                <div class="about__content">
+                    <h2 class="section__heading">Обо Мне</h2>
+                    <p class="about__desc">Меня зовут Ильвира.<br>Я лицензированный гид по Чехии</p>
+                    <p class="about__text">Те, кто уже не раз бывал в Праге, возможно, поймут меня, если я скажу «В
+                        Прагу невозможно не влюбиться». Одной этой фразой, пожалуй, можно описать, почему я переехала в
+                        этот замечательный город и занимаюсь именно этой деятельностью. Я надеюсь, что в течение наших
+                        экскурсий Вы прочувствуете город, и влюбитесь в него, как когда-то влюбилась я.</p>
+                </div>
+                <div class="about__photo" style="background-image: url('img/mainContent/aboutMe.jpg');"></div>
+            </div>
+        </div>
+    </section>
+    <!--  /"About me" section  -->
+
 
     <footer class="footer">
 
@@ -22,4 +165,5 @@
     <script src="js/libs.min.js"></script>
     <script src="js/main.min.js"></script>
 </body>
+
 </html>

@@ -39,6 +39,22 @@ li{
     padding: 0;
 }
 
+.section__heading{
+    @include vet400;
+    font-size: 70px;
+    line-height: 70px;
+    color: $buttonRed;
+    margin-bottom: 6px;
+}
+.section__heading--desc{
+    @include mon400;
+    font-size: 17px;
+    line-height: 17px;
+    color: $textGrey;
+}
+
 .container {
+    max-width: 1200px;
+    padding: 0px 15px;
     margin: 0 auto;
 }

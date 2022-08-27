@@ -1,11 +1,404 @@
-@import "global.scss";
 @import "fonts.scss";
 @import "vars.scss";
+@import "global.scss";
 
 /* Main style sheet begins here */
-.h1{
-    @include h1;
+
+.mainScreen{
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    &__heading{
+        @include mon800;
+        color: $textWhite;
+        font-size: 55px;
+        margin-bottom: 10vh;
+    }
+    &__button{
+        padding: 30px 100px;
+        border-radius: 10px;
+        background-color: $buttonRed;
+        text-transform: uppercase;
+        @include mon600;
+        color: $textWhite;
+    }
 }
+.header{
+    padding: 30px 0px 22px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $textWhite;
+    margin-bottom: 20vh;
+    &__logo{
+        max-width: 248px;
+        width: 100%;
+        padding: 10px 7px;
+        text-align: center;
+        border-left: 2px solid $textWhite;
+        border-right: 2px solid $textWhite;
+    }
+    &__logo--name{
+        @include vet400;
+        font-size: 20px;
+        line-height: 20px;
+        color: $textWhite;
+        margin-bottom: 5px;
+    }
+    &__logo--desc{
+        @include mon300;
+        font-size: 12px;
+        line-height: 12px;
+        color: $textWhite;
+    }
+    &__menu{
+        display: flex;
+        align-items: center;
+    }
+    &__menu--ul{
+        display: flex;
+        align-items: center;
+        li + li{
+            margin-left: 45px;
+        }
+    }
+    &__menu--link{
+        @include vet400;
+        color: $textWhite;
+    }
+    &__phone{
+        display: flex;
+        align-items: center;
+        a + a{
+            margin-left: 12px;
+        }
+    }
+    &__phone--social{
+        width: 25px;
+        height: 25px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &__phone--number{
+        cursor: pointer;
+        @include vet400;
+        font-size: 11px;
+        line-height: 11px;
+        padding: 15px 20px;
+        border-radius: 10px;
+        background-color: $buttonRed;
+        margin-left: 25px;
+        border: none;
+        outline: none;
+        color: $textWhite;
+    }
+}
+
+/* "Tours" section styles start here */
+.tours{
+    padding-top: 80px;
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 80px;
+    }
+    &__desc--box{
+        max-width: 490px;
+        width: 100%;
+    }
+    &__desc--heading{
+        @include mon700;
+        font-size: 30px;
+        line-height: 30px;
+        margin-bottom: 15px;
+        color: $textGrey;
+    }
+    &__desc--text{
+        @include mon400;
+        font-size: 18px;
+        line-height: 23px;
+        color: $textGrey;
+    }
+    &__tabs--top{
+        display: flex;
+        justify-content: center;
+    }
+    &__tabs--button{
+        position: relative;
+        max-width: 195px;
+        width: 100%;
+        height: 90px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        @include mon600;
+        font-size: 20px;
+        line-height: 23px;
+        color: $buttonRed;
+        cursor: pointer;
+        transition: all .3s ease;
+        &:first-child::before{
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 43px;
+            background-color: $buttonRed;
+            left: 0;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 43px;
+            background-color: $buttonRed;
+            right: -3px;
+        }
+        &.active{
+            background-color: $buttonRed;
+            border-radius: 10px 10px 0px 0px;
+            color: $textWhite;
+            &::after{
+                opacity: 0;
+            }
+        }
+    }
+    &__tabs--bottom{
+        position: relative;
+        height: calc(100vh - 110px);
+    }
+    &__tab{
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        height: calc(100vh - 110px);
+        background-position: top center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: all .3s ease;
+        width: 100%;
+        padding: 50px 15px 44px 15px;
+        &.active{
+            z-index: 5;
+            opacity: 1;
+        }
+    }
+    &__tabs--heading{
+        position: relative;
+        text-align: center;
+        @include vet400;
+        color: $textWhite;
+        font-size: 36px;
+        line-height: 36px;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 64px;
+            height: 5px;
+            background-color: $buttonRed;
+            bottom: -45px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+    }
+    &__tabs--slider{
+        text-align: center;
+        position: relative;
+        .slick-prev.slick-arrow{
+            background: none;
+            border: none;
+            outline: none;
+            background-image: url('../img/mainContent/toursPrevArrow.png');
+            width: 79px;
+            height: 79px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 0;
+            font-size: 0;
+            line-height: 0;
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            z-index: 50;
+        }
+        .slick-next.slick-arrow{
+            background: none;
+            border: none;
+            outline: none;
+            background-image: url('../img/mainContent/toursNextArrow.png');
+            width: 79px;
+            height: 79px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 0;
+            font-size: 0;
+            line-height: 0;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            z-index: 50;
+        }
+        .slick-dots{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            li + li{
+                margin-left: 15px;
+            }
+            li{
+                button{
+                    font-size: 0;
+                    line-height: 0;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    border: 2px solid $textWhite;
+                    cursor: pointer;
+                    transition: all .3s ease;
+                }
+            }
+            .slick-active{
+                button{
+                    background-color: $textWhite;
+                }
+            }
+        }
+    }
+    &__tabs--slide__heading{
+        @include mon700;
+        color: $textWhite;
+        font-size: 32px;
+        margin-top: 20vh;
+    }
+    &__tabs--slide__time{
+        position: relative;
+        @include vet400;
+        font-weight: 600;
+        color: $textWhite;
+        font-size: 18px;
+        margin-top: 40px;
+        &::before{
+            content: '';
+            position: absolute;
+            background-image: url('../img/mainContent/clock.svg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 18px;
+            height: 18px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-60px, -11px);
+        }
+    }
+    &__tabs--slide__type{
+        @include vet400;
+        color: $textWhite;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    &__tabs--slide__desc{
+        @include mon400;
+        color: $textWhite;
+        font-size: 18px;
+        line-height: 24px;
+        max-width: 760px;
+        width: 100%;
+        margin: 40px auto 10px auto;
+    }
+    &__tabs--slide__link{
+        display: inline-block;
+        padding: 25px 70px;
+        background-color: $buttonRed;
+        border-radius: 10px;
+        text-transform: uppercase;
+        @include mon600;
+        font-size: 14px;
+        color: $textWhite;
+        margin-top: 10vh;
+    }
+}
+/* "Tours" section styles end here */
+
+/* "Individual route" section styles start here */
+.individualRoute{
+    background-color: $textWhite;
+    text-align: center;
+    padding: 55px;
+    &__heading{
+        @include vet400;
+        font-size: 36px;
+        line-height: 36px;
+        color: $textGrey;
+        margin-bottom: 25px;
+        span{
+            color: $buttonRed;
+        }
+    }
+    &__text{
+        @include mon400;
+        font-size: 18px;
+        line-height: 24px;
+        color: $textGrey;
+        margin-bottom: 25px;
+    }
+    &__link{
+        display: inline-block;
+        @include mon600;
+        font-size: 14px;
+        color: $textWhite;
+        text-transform: uppercase;
+        background-color: $buttonRed;
+        border-radius: 10px;
+        padding: 20px 60px;
+    }
+}
+/* "Individual route" section styles end here */
+
+/* "About me" section styles start here */
+.about{
+    padding: 90px 0px;
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__content{
+        max-width: 500px;
+        width: 100%;
+    }
+    &__desc{
+        @include mon700;
+        font-size: 24px;
+        color: $textGrey;
+        margin-bottom: 30px;
+    }
+    &__text{
+        @include mon400;
+        font-size: 18px;
+        color: $textGrey;
+    }
+    &__photo{
+        width: 575px;
+        height: 381px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+/* "About me" section styles end here */
 
 .footer{
     margin-top: auto;
