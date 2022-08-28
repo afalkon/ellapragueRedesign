@@ -66,6 +66,22 @@
     &__menu--link{
         @include vet400;
         color: $textWhite;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: $buttonRed;
+            bottom: -10px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            opacity: 0;
+            transition: all .3s ease;
+        }
+        &:hover::after{
+            opacity: 1;
+        }
     }
     &__phone{
         display: flex;
@@ -257,6 +273,7 @@
             }
             li{
                 button{
+                    padding: 0;
                     font-size: 0;
                     line-height: 0;
                     background: none;
@@ -398,10 +415,309 @@
         background-repeat: no-repeat;
     }
 }
+.aboutAdditional{
+    background-color: $textWhite;
+    padding: 42px 0px;
+    &__line{
+        padding-left: 179px;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        &:first-child::before{
+            width: 82px;
+            height: 55px;
+            background-image: url('../img/mainContent/aboutIconPeople.png');
+        }
+        &:nth-child(2)::before{
+            width: 78px;
+            height: 82px;
+            background-image: url('../img/mainContent/aboutIconCar.png');
+        }
+        &:nth-child(3)::before{
+            width: 98px;
+            height: 91px;
+            background-image: url('../img/mainContent/aboutIconHeart.png');
+        }
+        & + .aboutAdditional__line{
+            margin-top: 55px;
+        }
+    }
+    &__heading{
+        @include vet400;
+        font-size: 36px;
+        line-height: 36px;
+        color: $textGrey;
+        margin-bottom: 4px;
+    }
+    &__text{
+        @include mon400;
+        font-size: 18px;
+        line-height: 24px;
+        color: $textGrey;
+    }
+}
 /* "About me" section styles end here */
+
+/* "Review" section styles */
+.reviewTop{
+    margin-top: 75px;
+    margin-bottom: 65px;
+}
+.reviewBottom{
+    background-color: $textWhite;
+    &__slider{
+        padding: 74px 0px 50px 0px;
+    }
+    &__slide{
+        padding: 27px 30px;
+        background-color: #FFFFFF;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        max-width: 475px;
+        width: 100%;
+        height: 439px;
+        margin-right: 15px;
+    }
+    &__slide--photo{
+        width: 118px;
+        height: 118px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-bottom: 10px;
+    }
+    &__slide--name{
+        @include mon700;
+        font-size: 17px;
+        line-height: 17px;
+        color: $textGrey;
+        margin-bottom: 15px;
+    }
+    &__slide--text{
+        @include mon400;
+        font-size: 12px;
+        line-height: 18px;
+        color: $textGrey;
+        text-align: center;
+    }
+    &__slide--date{
+        margin-top: auto;
+        @include vet400;
+        font-size: 12px;
+        line-height: 25px;
+        color: $textGrey;
+        border-bottom: 1px solid $textGrey;
+        margin-bottom: 6px;
+    }
+    &__slide--tour{
+        @include mon400;
+        font-size: 12px;
+        line-height: 16px;
+        color: $textGrey;
+        position: relative;
+        &::before{
+            content: '-';
+            position: absolute;
+            left: -10px;
+        }
+    }
+    .slick-prev.slick-arrow,
+    .slick-next.slick-arrow{
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 0;
+        line-height: 0;
+        width: 79px;
+        height: 79px;
+        background-image: url('../img/mainContent/reviewLeftArrow.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -145px;
+        right: 95px;
+        cursor: pointer;
+    }
+    .slick-next.slick-arrow{
+        background-image: url('../img/mainContent/reviewRightArrow.png');
+        top: -145px;
+        right: 0;
+    }
+    .slick-dots{
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+        li + li{
+            margin-left: 10px;
+        }
+        li{
+            button{
+                padding: 0;
+                background: none;
+                border: 2px solid $textGrey;
+                border-radius: 50%;
+                outline: none;
+                font-size: 0;
+                line-height: 0;
+                width: 12px;
+                height: 12px;
+                transition: all .3s ease;
+            }
+        }
+        li.slick-active{
+            button{
+                background: $textGrey;
+            }
+        }
+    }
+}
+/* "Review" section styles */
+
+/* "Contacts" section styles */
+.contacts{
+    padding: 50px 0px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &__heading{
+        @include vet400;
+        font-size: 48px;
+        text-align: center;
+        color: $textWhite;
+        margin-bottom: 15px;
+    }
+    &__desc{
+        @include mon400;
+        font-size: 18px;
+        line-height: 18px;
+        color: $textWhite;
+        max-width: 820px;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 35px;
+        text-align: center;
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+        max-width: 576px;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 25px;
+    }
+    &__form--input{
+        border: none;
+        outline: none;
+        height: 59px;
+        border-radius: 10px;
+        background-color: $textWhite;
+        padding: 0px 25px;
+        @include mon400;
+        font-size: 18px;
+        color: $textGrey;
+        margin-bottom: 14px;
+        &::placeholder{
+            opacity: 0.8;
+        }
+    }
+    &__form--text{
+        border: none;
+        outline: none;
+        height: 206px;
+        border-radius: 10px;
+        background-color: $textWhite;
+        padding: 10px 25px;
+        margin-bottom: 14px;
+        @include mon400;
+        font-size: 18px;
+        columns: $textGrey;
+        &::placeholder{
+            opacity: 0.8;
+        }
+    }
+    &__form--submit{
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        padding: 20px 25px;
+        background-color: $buttonRed;
+        @include mon600;
+        text-transform: uppercase;
+        color: $textWhite;
+    }
+    &__thirdParty{
+        max-width: 820px;
+        width: 100%;
+        margin: 0 auto;
+        @include mon400;
+        font-size: 12px;
+        color: $textWhite;
+        text-align: center;
+        margin-bottom: 35px;
+    }
+    &__call{
+        max-width: 820px;
+        width: 100%;
+        margin: 0 auto;
+        @include mon700;
+        font-size: 18px;
+        color: $textWhite;
+        text-align: center;
+        margin-top: 15px;
+    }
+    &__call--link{
+        @include mon700;
+        font-size: 18px;
+        color: $buttonRed;
+    }
+}
+/* End of "Contacts" section styles */
 
 .footer{
     margin-top: auto;
+    background-color: $textGrey;
+    padding-top: 45px;
+    padding-bottom: 40px;
+    &__nav{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 35px;
+        li + li{
+            margin-left: 25px;
+        }
+    }
+    &__nav--link{
+        @include vet400;
+        font-size: 15px;
+        color: $textWhite;
+    }
+    &__extensions{
+        @include mon400;
+        font-size: 12px;
+        line-height: 18px;
+        color: $textWhite;
+        text-align: center;
+        margin-bottom: 37px;
+    }
+    &__designBy{
+        @include mon700;
+        font-size: 18px;
+        color: $textWhite;
+        text-align: center;
+    }
+    &__disignBy--link{
+        color: $buttonRed;
+    }
 }
 
 

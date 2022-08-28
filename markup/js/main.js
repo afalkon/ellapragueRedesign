@@ -11,6 +11,15 @@ $(document).ready(function(){
       dots: true,
       arrows: true
     });
+    // Slick carousel settings for "Review" section
+    $('.reviewBottom__slider').slick({
+      dots: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      centerMode: true,
+      variableWidth: true
+    });
     // jQuery methods go here...
   
   });
