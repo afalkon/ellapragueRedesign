@@ -20,6 +20,27 @@ $(document).ready(function(){
       centerMode: true,
       variableWidth: true
     });
+
+    // Burger Menu script
+    $('.header__burger').click(function(){
+      const media500 = window.matchMedia('(min-width: 500px)');
+      $(this).toggleClass('active');
+      $('.header__menu').toggleClass('active');
+      $('body').toggleClass('lock');
+      if(media500.matches){
+        $('.header__logo').toggleClass('active');
+        $('.header').toggleClass('active');
+      }
+      $('.header__menu--link').click(function(){
+        $('.header__burger').removeClass('active');
+        $('.header__menu').removeClass('active');
+        $('body').removeClass('lock');
+        if(media500.matches) {
+          $('.header__logo').removeClass('active');
+          $('.header').removeClass('active');
+        }
+      });
+    });
     // jQuery methods go here...
   
   });
