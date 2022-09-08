@@ -1,13 +1,11 @@
 <?php
 
 require_once "config.php";
+require_once ROOT . 'libs/functions.php';
+require_once ROOT . 'dbget.php';
 
 // Starting session
 session_start();
-
-// Red Bean ORM including
-require ROOT . 'libs/rb-mysql.php';
-R::setup('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
 
 // Getting the request url
 $uri = $_SERVER['REQUEST_URI'];
@@ -21,6 +19,21 @@ switch ($uri[0]){
     // ::::::::::::::: Main page Route :::::::::::::::
     case '':
         require_once ROOT . "modules/main/main.php";
+        break;
+    
+    // ::::::::::::::: Login page Routes :::::::::::::::
+    case 'login':
+        require_once ROOT . "modules/login/login.php";
+        break;
+    case 'password-recovery':
+        require_once ROOT . "modules/login/password-recovery.php";
+        break;
+    case 'new-password':
+        require_once ROOT . "modules/login/new-password.php";
+        break;
+        
+    case 'lost-password':
+        require_once ROOT . "modules/login/lost-password.php";
         break;
     default:
         require_once ROOT . "modules/main/main.php";

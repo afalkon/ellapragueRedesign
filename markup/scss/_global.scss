@@ -43,6 +43,19 @@ li{
     padding: 0;
 }
 
+.errorrMsg{
+    padding: 9px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    background-color: #ff7575;
+    border-radius: 7px;
+    @include mon400;
+    font-size: 14px;
+    color: $textWhite;
+    margin-bottom: 20px;
+}
+
 .section__heading{
     @include vet400;
     font-size: 70px;

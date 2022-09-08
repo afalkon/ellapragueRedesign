@@ -54,6 +54,20 @@ li {
   padding: 0;
 }
 
+.errorrMsg {
+  padding: 9px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  background-color: #ff7575;
+  border-radius: 7px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #f2f0f0;
+  margin-bottom: 20px;
+}
+
 .section__heading {
   font-family: "VetrinoRegular";
   font-weight: 400;
@@ -951,6 +965,93 @@ li {
 }
 
 /* End of "Contacts" section styles */
+/* Login pgae styles */
+.loginPage {
+  background-color: #f2f0f0;
+  min-height: 80vh;
+  padding-top: 20px;
+  text-align: center;
+}
+.loginPage .header__logo {
+  border-left: 1px solid #595757;
+  border-right: 1px solid #595757;
+  display: inline-block;
+  margin-bottom: 80px;
+}
+.loginPage .header__logo--name,
+.loginPage .header__logo--desc {
+  color: #595757;
+}
+.loginPage__login {
+  max-width: 300px;
+  width: 100%;
+  min-height: 250px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 15px;
+}
+.loginPage__form {
+  max-width: 270px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 200px;
+}
+.loginPage__form--heading {
+  font-family: "VetrinoRegular";
+  font-weight: 400;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.loginPage__form--input {
+  max-width: 230px;
+  width: 100%;
+  background-color: #f2f0f0;
+  min-height: 40px;
+  padding-left: 25px;
+  padding-right: 20px;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+.loginPage__form--button {
+  max-width: 230px;
+  width: 100%;
+  background-color: #595757;
+  padding: 9px;
+  text-transform: uppercase;
+  color: #f2f0f0;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  cursor: pointer;
+  display: block;
+  margin-top: auto;
+}
+.loginPage__form--passwordRecovery {
+  margin-top: 20px;
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #5e87f7;
+}
+
+/* End of Login page styles */
 .footer {
   margin-top: auto;
   background-color: #595757;
