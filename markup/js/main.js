@@ -1,4 +1,10 @@
 $(document).ready(function(){
+
+    // Adding active classes to the first tab and tab button
+    $('.tours__tabs--button:first-child').addClass('active');
+    $('.tours__tab:first-child').addClass('active');
+
+    // Tabs for "Tours" section
     $('.tours__tabs--button').click(function(){
       var elemid = $(this).attr('id');
       console.log(elemid);

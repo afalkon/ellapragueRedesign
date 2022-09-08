@@ -165,7 +165,7 @@
 
 /* "Tours" section styles start here */
 .tours{
-    padding-top: 80px;
+    padding-top: 30px;
     &__top{
         display: flex;
         justify-content: space-between;
@@ -242,7 +242,7 @@
         position: absolute;
         z-index: 1;
         opacity: 0;
-        height: calc(100vh - 110px);
+        min-height: 745px;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -261,6 +261,7 @@
         color: $textWhite;
         font-size: 36px;
         line-height: 36px;
+        margin-bottom: 100px;
         &::after{
             content: '';
             position: absolute;
@@ -318,7 +319,6 @@
         .slick-dots{
             display: flex;
             justify-content: center;
-            margin-top: 50px;
             li + li{
                 margin-left: 15px;
             }
@@ -345,17 +345,24 @@
             }
         }
     }
+    &__tabs--slide{
+        min-height: 520px;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     &__tabs--slide__heading{
         @include mon700;
         color: $textWhite;
         font-size: 32px;
-        margin-top: 20vh;
+        margin-bottom: 40px;
     }
     &__tabs--slide__type{
         @include vet400;
         color: $textWhite;
         font-size: 18px;
-        margin-top: 40px;
+        margin-bottom: 40px;
     }
     &__tabs--slide__desc{
         @include mon400;
@@ -364,10 +371,8 @@
         line-height: 24px;
         max-width: 760px;
         width: 100%;
-        margin: 40px auto 10px auto;
     }
     &__tabs--slide__link{
-        display: inline-block;
         padding: 25px 70px;
         background-color: $buttonRed;
         border-radius: 10px;
@@ -375,7 +380,8 @@
         @include mon600;
         font-size: 14px;
         color: $textWhite;
-        margin-top: 10vh;
+        margin-top: auto;
+        margin-bottom: 20px;
     }
 }
 /* "Tours" section styles end here */

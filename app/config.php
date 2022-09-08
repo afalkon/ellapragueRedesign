@@ -7,9 +7,10 @@ if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on'){
 }
 
 
+
 //DB settings
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'project');
+define('DB_NAME', 'ellapragueredesign');
 define('DB_USER', 'root');
 define('DB_PASS', 'A9101104265falkon');
 

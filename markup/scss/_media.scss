@@ -1,7 +1,7 @@
 // HD+ (1600 x 900)
-@media (max-width: 1600px) and (max-height: 900px){
+@media (max-width: 1600px){
     .tours{
-        padding-top: 40px;
+        padding-top: 15px;
     }
     .section__heading{
         font-size: 55px;
@@ -20,33 +20,31 @@
         height: 55px;
         font-size: 18px;
     }
+    .tours__tab{
+        padding: 25px;
+    }
     .tours__tab,
     .tours__tabs--bottom{
-        height: 650px;
+        min-height: 590px;
+    }
+    .tours__tabs--slide{
+        min-height: 430px;
     }
     .tours__tabs--heading{
         font-size: 32px;
+        margin-bottom: 45px;
         &::after{
             bottom: -20px;
         }
     }
     .tours__tabs--slide__heading{
-        margin-top: 40px;
         font-size: 24px;
-    }
-    .tours__tabs--slide__desc{
-        margin-top: 70px;
-    }
-    .tours__tabs--slide__link{
-        margin-top: 40px;
-    }
-    .tours__tabs--slider .slick-dots{
-        margin-top: 18px;
+        margin-bottom: 35px;
     }
 }
 
 // HD (1366 x 768)
-@media (max-width: 1366px) and (min-height: 623px){
+@media (max-width: 1366px){
     .mainScreen__heading{
         max-width: 800px;
         width: 100%;
@@ -84,7 +82,7 @@
     }
     .tours__tab,
     .tours__tabs--bottom{
-        height: 479px;
+        min-height: 520px;
     }
     .tours__tab{
         padding-top: 20px;
@@ -95,25 +93,24 @@
     .tours__tabs--heading::after{
         bottom: -9px;
     }
+    .tours__tabs--slide{
+        min-height: 340px;
+    }
     .tours__tabs--slide__heading{
-        margin-top: 5vh;
         font-size: 20px;
+        margin-bottom: 20px;
     }
     .tours__tabs--slide__type{
-        margin-top: 15px;
         font-size: 14px;
+        margin-bottom: 30px;
     }
     .tours__tabs--slide__desc{
-        margin-top: 23px;
         font-size: 15px;
         line-height: 20px;
     }
     .tours__tabs--slide__link{
-        margin-top: 40px;
+        margin-top: auto;
         padding: 18px 70px;
-    }
-    .tours__tabs--slider .slick-dots{
-        margin-top: -5px;
     }
     .reviewTop{
         margin-top: 40px;
@@ -344,13 +341,16 @@
     }
     .tours__tab,
     .tours__tabs--bottom{
-        height: 593px;
+        min-height: 542px;
     }
-    .tours__tabs--slide__heading{
-        margin-top: 38px;
+    .tours__tabs--slide{
+        min-height: 395px;
     }
-    .tours__tabs--slide__link{
-        margin-top: 38px;
+    .tours__tabs--heading{
+        margin-bottom: 35px;
+    }
+    .tours__tabs--slide__desc{
+        font-size: 13px;
     }
     .tours__tabs--button{
         max-width: 95px;
@@ -358,19 +358,25 @@
     .tours__desc--box{
         max-width: 300px;
     }
+    .tours__tabs--slide__link{
+        margin-bottom: 10px;
+    }
     .tours__tabs--slider .slick-dots{
-        margin-top: 10px;
     }
 }
 
 // Max width - 600px
 @media (max-width: 600px){
+    .header__logo{
+        z-index: 5;
+    }
     .header__logo--name{
         font-size: 14px;
         line-height: 14px;
     }
     .header__burger{
         margin-left: 17px;
+        z-index: 5;
     }
     .header__phone--number{
         margin-left: 15px;
@@ -443,7 +449,7 @@
         }
         &.active{
             color: $textWhite;
-            margin-bottom: 573px;
+            margin-bottom: 388px;
             & span{
                 transform: rotate(720deg);
                 &::before{
@@ -456,33 +462,36 @@
         }
         
     }
+    .tours__tab{
+        padding: 10px;
+    }
     .tours__tab:first-child{
-        top: -758px;
+        top: -573px;
         height: 0;
         transition: all .3s ease;
     }
     .tours__tab:nth-child(2){
-        top: -721px;
+        top: -536px;
         height: 0;
         transition: all .3s ease;
     }
     .tours__tab:nth-child(3){
-        top: -684px;
+        top: -499px;
         height: 0;
         transition: all .3s ease;
     }
     .tours__tab:nth-child(4){
-        top: -648px;
+        top: -462px;
         height: 0;
         transition: all .3s ease;
     }
     .tours__tab:nth-child(5){
-        top: -610px;
+        top: -425px;
         height: 0;
         transition: all .3s ease;
     }
     .tours__tab:nth-child(6){
-        top: -574px;
+        top: -388px;
         height: 0;
         transition: all .3s ease;
     }
@@ -492,13 +501,35 @@
     .tours__tab:nth-child(4).active,
     .tours__tab:nth-child(5).active,
     .tours__tab:nth-child(6).active{
-        height: 573px;
+        min-height: 388px;;
     }
     .tours__tabs--bottom{
-        height: 0;
+        display: block;
+        height: 0 !important;
+        min-height: 0;
     }
-    .tours__tabs--slider .slick-dots{
-        margin-top: 18px;
+    .tours__tabs--heading{
+        font-size: 18px;
+        margin-bottom: 21px;
+    }
+    .tours__tabs--slide__heading{
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    .tours__tabs--slide__type{
+        margin-bottom: 14px;
+        font-size: 13px;
+    }
+    .tours__tabs--slide__desc{
+        max-width: 490px;
+        font-size: 12px;
+    }
+    .tours__tabs--slide{
+        min-height: 284px;
+    }
+    .tours__tabs--slide__link{
+        padding: 12px 60px;
+        border-radius: 7px;
     }
     .about__inner{
         flex-direction: column;
@@ -547,7 +578,6 @@
     
     .header__logo.active{
         position: relative;
-        z-index: 50;
         border-left: 2px solid $textGrey;
         border-right: 2px solid $textGrey;
         .header__logo--name,
@@ -561,14 +591,17 @@
         background-color: $textWhite;
         position: fixed;
         width: 500px;
+        z-index: -5;
         &.active{
             height: 100%;
             top: 0;
+            z-index: 2;
         }
     }
     .header__burger.active::before,
     .header__burger.active::after{
         background-color: $textGrey;
+        z-index: 5;
     }
     .header__menu--ul{
         flex-direction: column;
@@ -597,9 +630,6 @@
     .tours__tabs--slide__heading{
         margin-top: 0;
     }
-    .tours__tabs--slide__link{
-        margin-top: 20px;
-    }
     .tours__tabs--slide__desc{
         font-size: 12px;
     }
@@ -612,28 +642,28 @@
     .tours__tab:nth-child(4).active,
     .tours__tab:nth-child(5).active,
     .tours__tab:nth-child(6).active{
-        height: 418px;
+        min-height: 339px;
     }
     .tours__tabs--button.active{
-        margin-bottom: 418px;
+        margin-bottom: 339px;
     }
     .tours__tab:first-child{
-        top: -603px;
+        top: -524px;
     }
     .tours__tab:nth-child(2){
-        top: -567px;
+        top: -487px;
     }
     .tours__tab:nth-child(3){
-        top: -529px;
+        top: -450px;
     }
     .tours__tab:nth-child(4){
-        top: -493px;
+        top: -413px;
     }
     .tours__tab:nth-child(5){
-        top: -456px;
+        top: -376px;
     }
     .tours__tab:nth-child(6){
-        top: -418px;
+        top: -388px;
     }
     .section__heading--desc{
         margin-bottom: 20px;
@@ -701,7 +731,7 @@
         max-width: 295px;
     }
     .tours__tabs--button.active{
-        margin-bottom: 464px;
+        margin-bottom: 364px;
     }
     .tours__tab:first-child.active,
     .tours__tab:nth-child(2).active,
@@ -709,25 +739,34 @@
     .tours__tab:nth-child(4).active,
     .tours__tab:nth-child(5).active,
     .tours__tab:nth-child(6).active{
-        height: 464px;
+        min-height: 364px;
+    }
+    .tours__tabs--slide{
+        min-height: 320px;
+    }
+    .tours__tabs--slide__link{
+        margin-bottom: 0;
+    }
+    .tours__tabs--slide__desc{
+        max-width: 360px;
     }
     .tours__tab:first-child{
-        top: -649px;
+        top: -549px;
     }
     .tours__tab:nth-child(2){
-        top: -612px;
+        top: -512px;
     }
     .tours__tab:nth-child(3){
-        top: -575px;
+        top: -475px;
     }
     .tours__tab:nth-child(4){
-        top: -538px;
+        top: -438px;
     }
     .tours__tab:nth-child(5){
-        top: -501px;
+        top: -401px;
     }
     .tours__tab:nth-child(6){
-        top: -464px;
+        top: -364px;
     }
     .individualRoute__heading{
         font-size: 22px;

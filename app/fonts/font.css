@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'VetrinoRegular';
+  src: url('VetrinoRegular.eot');
+  src: url('VetrinoRegular.eot?#iefix') format('embedded-opentype'),
+       url('VetrinoRegular.svg#VetrinoRegular') format('svg'),
+       url('VetrinoRegular.ttf') format('truetype'),
+       url('VetrinoRegular.woff') format('woff'),
+       url('VetrinoRegular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
