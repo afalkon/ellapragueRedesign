@@ -75,3 +75,35 @@ li{
     padding: 0px 15px;
     margin: 0 auto;
 }
+
+/* Pagination styles */
+.pagination{
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &__ul{
+        display: flex;
+        li + li{
+            margin-left: 4px;
+        }
+    }
+    &__li{
+        width: 25px;
+        height: 25px;
+        background-color: $textWhite;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s ease;
+        &:hover{
+            background-color: #d6dce6;
+        }
+    }
+    &__link{
+        @include mon600;
+        font-size: 14px;
+        color: $textGrey;
+    }
+}

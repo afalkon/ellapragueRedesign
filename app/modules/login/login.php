@@ -27,7 +27,7 @@ if(isset($_POST['submit']) && $_POST['submit'] === 'login'){
 
             // Checking password and login
             if ($passwordClean === $userRow['password']){
-                $_SESSION['logged_user'][] = [  'email' => $userRow['email'],
+                $_SESSION['logged_user'] = [  'email' => $userRow['email'],
                                                 'name' => $userRow['name'],
                                                 'role' => $userRow['role']];
 

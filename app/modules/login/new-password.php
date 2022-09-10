@@ -22,8 +22,6 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'newpass'){
         if ($pswdClean == $rePswdClean){
             $user = R::findOne('users', 'email = ?', [$_GET['email']]);
 
-            /* echo $user['recovery_code'];
-            die(); */
             if ($_GET['code'] === $user['recovery_code']){
                 
                 $user->password = $pswdClean;

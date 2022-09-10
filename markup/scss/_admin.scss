@@ -1,0 +1,197 @@
+/* Admin panel styles */
+
+/* Sidebar styles */
+
+.adminPage{
+    background-color: $textWhite;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.sidebar{
+    height: 100vh;
+    max-width: 310px;
+    width: 100%;
+    position: fixed;
+    background-color: $textGrey;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__nav{
+        height: 100%;
+    }
+    &__nav--ul{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding-bottom: 50px;
+        li + li {
+            margin-top: 16px;
+        }
+    }
+    &__nav--li{
+        position: relative;
+        padding-left: 30px;
+        display: block;
+        &::before{
+            content: '';
+            position: absolute;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 20px;
+            height: 20px;
+            left: 0;
+        }
+    }
+    &__nav--li:first-child::before{
+        background-image: url('../img/mainContent/user-tie.svg');
+    }
+    &__nav--li:nth-child(2)::before{
+        background-image: url('../img/mainContent/equalizer2.svg');
+    }
+    &__nav--li:nth-child(3)::before{
+        background-image: url('../img/mainContent/file-text2.svg');
+    }
+    &__nav--li:nth-child(4)::before{
+        background-image: url('../img/mainContent/list.svg');
+    }
+    &__nav--li:nth-child(5)::before{
+        background-image: url('../img/mainContent/blog.svg');
+    }
+    &__nav--li:nth-child(6)::before{
+        background-image: url('../img/mainContent/mobile.svg');
+    }
+    &__nav--li:nth-child(7)::before{
+        background-image: url('../img/mainContent/stats-dots.svg');
+    }
+    &__nav--li:nth-child(8)::before{
+        background-image: url('../img/mainContent/rate_review.svg');
+    }
+    &__nav--li:nth-child(9)::before{
+        background-image: url('../img/mainContent/map2.svg');
+    }
+    &__nav--li:last-child{
+        margin-top: auto;
+        &::before{
+            background-image: url('../img/mainContent/enter.svg')
+        }
+    }
+    &__nav--highliter{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        @include mon600;
+        font-size: 9px;
+        line-height: 9px;
+        color: $textWhite;
+        background-color: #ff0d0d;
+        top: -7px;
+        left: -17px;
+    }
+    &__nav--link{
+        @include mon600;
+        font-size: 18px;
+        color: $textWhite;
+        position: relative;
+    }
+}
+
+.admin__logo{
+    display: inline-block;
+    padding: 5px 10px;
+    text-align: center;
+    border-right: 1px solid $textWhite;
+    border-left: 1px solid $textWhite;
+    margin-bottom: 50px;
+}
+
+.admin__main{
+    max-width: 900px;
+    width: 100%;
+    min-height: 400px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    margin-left: 330px;
+    margin-top: 25px;
+    padding: 20px 15px 40px;
+}
+
+.admin__messages{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    &--heading{
+        @include mon600;
+        font-size: 22px;
+        color: $textGrey;
+        margin-bottom: 30px;
+        span{
+            @include mon700;
+        }
+    }
+    &--inbox{
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+    }
+    &--inbox__heading{
+        width: 100%;
+        @include mon400;
+        font-size: 18px;
+        color: $textGrey;
+    }
+    &--inbox__heading--title{
+        text-align: start;
+    }
+    &--inbox__message{
+        height: 40px;
+        @include mon400;
+        font-size: 14px;
+        position: relative;
+        transition: all .3s ease;
+        &:hover{
+            background-color: #d6dce6 !important;
+        }
+    }
+    &--single__row{
+        @include mon700;
+        font-size: 16px;
+        color: $textGrey;
+        margin-bottom: 15px;
+        max-width: 600px;
+        width: 100%;
+        span{
+            @include mon400;
+        }
+    }
+    &--button__box{
+        margin-top: 70px;
+    }
+    &--button__link--back,
+    &--button__link--delete{
+        padding: 15px 40px;
+        border-radius: 7px;
+        background-color: $textWhite;
+        @include mon600;
+        font-size: 20px;
+        color: $textGrey;
+        margin-right: 20px;
+        transition: all .3s ease;
+        &:hover{
+            background-color: #d6dce6;
+        }
+    }
+    &--button__link--delete{
+        color: $textWhite;
+        background-color: #ff6464;
+        &:hover{
+            background-color: #ff3838;
+        }
+    }
+}
