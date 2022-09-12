@@ -10,9 +10,18 @@
                 <li class="footer__nav--li">
                     <a href="<?=HOST . $navLink['footer_third']['link']?>" class="footer__nav--link"><?=$navLink['footer_third']['linkName']?></a>
                 </li>
-                <li class="footer__nav--li">
-                    <a href="<?=HOST . $navLink['footer_fourth']['link']?>" class="footer__nav--link"><?=$navLink['footer_fourth']['linkName']?></a>
-                </li>
+
+                <?php if(!empty($_SESSION['logged_user'])): ?>
+                    
+                    <li class="footer__nav--li">
+                        <a href="<?=HOST?>admin" class="footer__nav--link"><?=$navLink['footer_fourth']['linkName']?></a>
+                    </li>
+                <?php else: ?>
+                    <li class="footer__nav--li">
+                        <a href="<?=HOST . $navLink['footer_fourth']['link']?>" class="footer__nav--link"><?=$navLink['footer_fourth']['linkName']?></a>
+                    </li>
+                <?php endif; ?>    
+
             </nav>
             <p class="footer__extensions">© 2018 Русский гид в Праге - Ильвира Рахманова. Все права на тексты и фото
                 принадлежат его автору, если не указано иное. Полное использование материалов запрещено. Частичное

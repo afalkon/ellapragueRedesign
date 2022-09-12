@@ -54,6 +54,26 @@ switch ($uri[0]){
     case 'delete-message':
         require_once ROOT . "modules/admin/messages/message-delete.php";
         break;
+        // All tours and destinations
+    case 'destinations':
+        require_once ROOT . "modules/admin/tours/destinations.php";
+        break;
+    case 'destination-add':
+        require_once ROOT . "modules/admin/tours/destination-add.php";
+        break;
+    case 'destination-edit':
+        require_once ROOT . "modules/admin/tours/destination-edit.php";
+        break;
+    case 'destination-delete':
+        require_once ROOT . "modules/admin/tours/destination-delete.php";
+        break;
+    
+    case 'alltours':
+        require_once ROOT . "modules/admin/tours/alltours.php";
+        break;
+    case 'tour-add':
+        require_once ROOT . "modules/admin/tours/tour-add.php";
+        break;
         
     
     default:

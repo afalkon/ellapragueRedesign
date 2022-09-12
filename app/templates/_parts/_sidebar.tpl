@@ -1,5 +1,5 @@
         <section class="sidebar">
-            <a href="#" class="admin__logo">
+            <a href="<?=HOST?>" class="admin__logo">
                 <p class="header__logo--name">Ильвира Рахманова</p>
                 <p class="header__logo--desc">Лицензированный гид в Праге</p>
             </a>
@@ -20,7 +20,8 @@
                     <li class="sidebar__nav--li"><a href="" class="sidebar__nav--link">Звонки</a></li>
                     <li class="sidebar__nav--li"><a href="" class="sidebar__nav--link">Статистика</a></li>
                     <li class="sidebar__nav--li"><a href="" class="sidebar__nav--link">Отзывы</a></li>
-                    <li class="sidebar__nav--li"><a href="" class="sidebar__nav--link">Экскурсии</a></li>
+                    <li class="sidebar__nav--li"><a href="<?=HOST?>alltours" class="sidebar__nav--link">Экскурсии</a></li>
+                    <li class="sidebar__nav--li"><a href="<?=HOST?>destinations" class="sidebar__nav--link">Направления</a></li>
                     <li class="sidebar__nav--li"><a href="" class="sidebar__nav--link">Выход</a></li>
                 </ul>
             </nav>

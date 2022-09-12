@@ -72,6 +72,9 @@
     &__nav--li:nth-child(9)::before{
         background-image: url('../img/mainContent/map2.svg');
     }
+    &__nav--li:nth-child(10)::before{
+        background-image: url('../img/mainContent/compass.svg');
+    }
     &__nav--li:last-child{
         margin-top: auto;
         &::before{
