@@ -1,7 +1,7 @@
 <?php
 
 
-$pageTitle = 'Добавление направления';
+$pageTitle = 'Добавление экскурсии';
 
 $destinations = R::getAll('SELECT id, cat_name FROM tourscat');
 

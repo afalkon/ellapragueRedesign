@@ -131,7 +131,8 @@ li {
   font-size: 14px;
 }
 
-.admin__input--select {
+.admin__input--select,
+.admin__input--select__multiple {
   background-color: #f2f0f0;
   border: none;
   outline: none;
@@ -142,6 +143,16 @@ li {
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 15px;
+}
+
+.admin__input--checkbox {
+  margin-right: auto;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+.admin__input--select__multiple {
+  min-height: 350px;
 }
 
 .admin__input--textarea {
@@ -160,6 +171,23 @@ li {
   margin-bottom: 15px;
 }
 
+.admin__editAvatar--preview {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 15px;
+}
+
+.admin__nothing--else__matters {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #595757;
+}
+
 .admin__input--file__button {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
@@ -168,6 +196,7 @@ li {
   background-color: #f2f0f0;
   border-radius: 5px;
   margin-bottom: 25px;
+  padding: 10px;
   cursor: pointer;
 }
 
@@ -188,6 +217,26 @@ li {
 }
 .admin__form--submit:hover {
   background-color: #d6dce6;
+}
+
+.admin__review--avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.admin__visibility--check {
+  width: 15px;
+  height: 15px;
+  margin-right: 40px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* Pagination styles */
@@ -863,6 +912,7 @@ li {
   background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: 10px;
+  border-radius: 50%;
 }
 .reviewBottom__slide--name {
   font-family: "Montserrat", sans-serif;
@@ -1349,7 +1399,7 @@ li {
 .admin__main {
   max-width: 900px;
   width: 100%;
-  min-height: 400px;
+  min-height: 100px;
   background-color: #FFFFFF;
   border-radius: 15px;
   margin-left: 330px;

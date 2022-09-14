@@ -7,10 +7,10 @@
                 </a>
                 <nav class="header__menu">
                     <ul class="header__menu--ul">
-                        <li class="header__menu--li"><a href="<?=HOST . $navLink['header_first']['link']?>" class="header__menu--link"><?=$navLink['header_first']['linkName']?></a></li>
-                        <li class="header__menu--li"><a href="<?=HOST . $navLink['header_second']['link']?>" class="header__menu--link"><?=$navLink['header_second']['linkName']?></a></li>
-                        <li class="header__menu--li"><a href="<?=HOST . $navLink['header_third']['link']?>" class="header__menu--link"><?=$navLink['header_third']['linkName']?></a></li>
-                        <li class="header__menu--li"><a href="<?=HOST . $navLink['header_fourth']['link']?>" class="header__menu--link"><?=$navLink['header_fourth']['linkName']?></a></li>
+                        <li class="header__menu--li"><a href="<?=$navLink['header_first']['link']?>" class="header__menu--link"><?=$navLink['header_first']['linkName']?></a></li>
+                        <li class="header__menu--li"><a href="<?=$navLink['header_second']['link']?>" class="header__menu--link"><?=$navLink['header_second']['linkName']?></a></li>
+                        <li class="header__menu--li"><a href="<?=$navLink['header_third']['link']?>" class="header__menu--link"><?=$navLink['header_third']['linkName']?></a></li>
+                        <li class="header__menu--li"><a href="<?=$navLink['header_fourth']['link']?>" class="header__menu--link"><?=$navLink['header_fourth']['linkName']?></a></li>
                     </ul>
                 </nav>
                 <div class="header__phone">

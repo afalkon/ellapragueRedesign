@@ -531,6 +531,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         margin-bottom: 10px;
+        border-radius: 50%;
     }
     &__slide--name{
         @include mon700;

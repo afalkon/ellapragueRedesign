@@ -5,6 +5,13 @@
                     <h2 class="admin__messages--heading">Все экскурсии</h2>
                     <a href="<?=HOST?>tour-add" class="admin__messages--button__link--back">Добавить</a>
                 </div>
+
+                <?php if(empty($allTours)): ?>
+
+                <p class="admin__nothing--else__matters">Тут пока ничего нет...</p>
+
+                <?php else: ?>
+
                 <table class="admin__messages--inbox">
                     <tr class="admin__messages--inbox__heading">
                         <th class="admin__messages--inbox__heading--title">Название экскурсии</th>
@@ -26,7 +33,7 @@
                     <?php endforeach; ?>
                     
                 </table>
-
+                <?php endif; ?>
                 
             </div>
         </section>

@@ -74,7 +74,27 @@ switch ($uri[0]){
     case 'tour-add':
         require_once ROOT . "modules/admin/tours/tour-add.php";
         break;
+    case 'tour-edit':
+        require_once ROOT . "modules/admin/tours/tour-edit.php";
+        break;
+    case 'tour-delete':
+        require_once ROOT . "modules/admin/tours/tour-delete.php";
+        break;
         
+    // ::::::::::::::: Reviews page Routes :::::::::::::::
+    case 'reviews':
+        require_once ROOT . "modules/admin/reviews/reviews-all.php";
+        break;
+    case 'review-add':
+        require_once ROOT . "modules/admin/reviews/review-add.php";
+        break;
+    case 'review-edit':
+        require_once ROOT . "modules/admin/reviews/review-edit.php";
+        break;
+    case 'review-delete':
+        require_once ROOT . "modules/admin/reviews/review-delete.php";
+        break;
+
     
     default:
         require_once ROOT . "modules/main/main.php";

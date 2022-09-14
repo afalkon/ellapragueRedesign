@@ -19,7 +19,12 @@
                         </a></li>
                     <li class="sidebar__nav--li"><a href="" class="sidebar__nav--link">Звонки</a></li>
                     <li class="sidebar__nav--li"><a href="" class="sidebar__nav--link">Статистика</a></li>
-                    <li class="sidebar__nav--li"><a href="" class="sidebar__nav--link">Отзывы</a></li>
+                    <li class="sidebar__nav--li">
+                        <a href="<?=HOST?>reviews" class="sidebar__nav--link">Отзывы
+                        <?php if(!empty($unreadReviewsNum)): ?>
+                            <div class="sidebar__nav--highliter"><?=$unreadReviewsNum?></div>
+                        <?php endif; ?>
+                        </a></li>
                     <li class="sidebar__nav--li"><a href="<?=HOST?>alltours" class="sidebar__nav--link">Экскурсии</a></li>
                     <li class="sidebar__nav--li"><a href="<?=HOST?>destinations" class="sidebar__nav--link">Направления</a></li>
                     <li class="sidebar__nav--li"><a href="" class="sidebar__nav--link">Выход</a></li>
