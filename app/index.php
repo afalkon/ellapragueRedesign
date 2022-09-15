@@ -95,6 +95,16 @@ switch ($uri[0]){
         require_once ROOT . "modules/admin/reviews/review-delete.php";
         break;
 
+    // ::::::::::::::: Stats page Routes :::::::::::::::
+    case 'stats':
+        require_once ROOT . "modules/admin/stats/stats.php";
+        break;
+    case 'messendger':
+        require_once ROOT . "modules/admin/messendgers/messendgers.php";
+        break;
+    case 'messendger-stats':
+        require_once ROOT . "modules/admin/messendgers/messendger-stats.php";
+        break;
     
     default:
         require_once ROOT . "modules/main/main.php";

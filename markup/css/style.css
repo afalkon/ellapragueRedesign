@@ -54,7 +54,8 @@ li {
   padding: 0;
 }
 
-.errorrMsg {
+.errorrMsg,
+.successMsg {
   padding: 9px;
   max-width: 400px;
   width: 100%;
@@ -65,7 +66,12 @@ li {
   font-weight: 400;
   font-size: 14px;
   color: #f2f0f0;
+  margin: 0 auto;
   margin-bottom: 20px;
+}
+
+.successMsg {
+  background-color: #0acc54;
 }
 
 .section__heading {
@@ -237,6 +243,23 @@ li {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.admin__chratWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin__chart--devicesChart,
+.admin__chart--devicesChart__wide {
+  width: 400px;
+  height: 250px !important;
+  border-radius: 10px;
+}
+
+.admin__chart--devicesChart__wide {
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 /* Pagination styles */

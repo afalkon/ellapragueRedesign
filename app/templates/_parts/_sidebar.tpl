@@ -17,8 +17,8 @@
                         <?php endif; ?>
 
                         </a></li>
-                    <li class="sidebar__nav--li"><a href="" class="sidebar__nav--link">Звонки</a></li>
-                    <li class="sidebar__nav--li"><a href="" class="sidebar__nav--link">Статистика</a></li>
+                    <li class="sidebar__nav--li"><a href="<?=HOST?>messendger-stats" class="sidebar__nav--link">Звонки</a></li>
+                    <li class="sidebar__nav--li"><a href="<?=HOST?>stats" class="sidebar__nav--link">Статистика</a></li>
                     <li class="sidebar__nav--li">
                         <a href="<?=HOST?>reviews" class="sidebar__nav--link">Отзывы
                         <?php if(!empty($unreadReviewsNum)): ?>

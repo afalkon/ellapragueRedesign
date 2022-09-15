@@ -13,7 +13,7 @@ function getSectionText($sectionName){
 
 // Getting tours by category
 function getTour($catId){
-    $toursList = R::getAll( 'SELECT alltours.tourname, alltours.tourtype, alltours.tourdesc 
+    $toursList = R::getAll( 'SELECT alltours.id, alltours.tourname, alltours.tourtype, alltours.tourdesc 
                             FROM alltours WHERE tourscat_id LIKE ?', [$catId]);
     return $toursList;
 }

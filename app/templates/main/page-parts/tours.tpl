@@ -35,7 +35,7 @@
                                 <h3 class="tours__tabs--slide__heading"><?=$tour['tourname']?></h3>
                                 <p class="tours__tabs--slide__type"><?=$tour['tourtype']?></p>
                                 <p class="tours__tabs--slide__desc"><?=$tour['tourdesc']?></p>
-                                <a href="#contacts" class="tours__tabs--slide__link">Заказать</a>
+                                <a data-id="<?=$tour['id']?>" href="#contacts" class="tours__tabs--slide__link">Заказать</a>
                             </article>
                         <?php endforeach; ?>
 

@@ -3,29 +3,164 @@
 $pageTitle = 'Индивидуальный гид';
 
 
+
+// Statistics into session
+if (isset($_GET['utm_source'])){
+    if(empty($_SESSION['google_ads'])){
+        $_SESSION['google_ads'] =     ['utm_source' => $_GET['utm_source'],
+                                        'utm_medium' => $_GET['utm_medium'],
+                                        'utm_campaign' => $_GET['utm_campaign'],
+                                        'utm_term' => $_GET['utm_term']];
+    }
+} elseif (isset($_SERVER['HTTP_REFERER'])){
+    if(empty($_SESSION['HTTP_REFERER'])){
+        $_SESSION['HTTP_REFERER'] = $_SERVER['HTTP_REFERER'];
+    }
+    
+}
+
+
 // Getting all tours categories
 $toursCats = R::getAll('SELECT * FROM tourscat');
 
 // Getting all reviews
 $reviews = R::findALL('reviews');
 
-/* $singleReview = R::load('reviews', 1);
+// Sending message
+if (isset($_POST['submit'])){
 
-$orderedTours = R::findOne('alltours', 'id = ?', [3]);
 
-$orderedTours->sharedTagList[] = $singleReview;
 
-$resultMany = R::store($orderedTours);
+    if (empty(trim($_POST['name']))){
+        $_SESSION['errors'][] = ['title' => 'Поле "Имя" является обязательным'];
+    }
+    if (empty(trim($_POST['phone']))){
+        $_SESSION['errors'][] = ['title' => 'Поле "Номер телефона" является обязательным'];
+    }
+    if (empty(trim($_POST['text']))){
+        $_SESSION['errors'][] = ['title' => 'Поле "Сообщение" является обязательным'];
+    }
 
-echo $resultMany;
-print_r($orderedTours);
-die(); */
+    $messageName = htmlspecialchars(trim($_POST['name']));
+    if (!empty($_POST['email'])){
+        $messageEmail = htmlspecialchars(trim($_POST['email']));
+    }
+    $messagePhone = htmlspecialchars(trim($_POST['phone']));
+    $messageText = htmlspecialchars(trim($_POST['text']));
+
+
+
+    /* Sending */
+    if (empty($_SESSION['errors'])){
+        
+        /* Spam detection */
+        $messageWordCount = str_word_count($messageText, 0, "АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯяAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz");
+        $keyUpNum = $_POST['keyUpCount'];
+
+        if ($keyUpNum < $messageWordCount) {
+
+            $spamDetector[] = ['title' => 'Spam detected', 'description' => 'Sending is not allowed'];
+    
+            $spamSave = R::dispense('spamdetect');
+                $spamSave->email = $formEmail;
+                $spamSave->message = $formMessage;
+                $spamSave->phone = $formPhone;
+            $spamSaveResult = R::store($spamSave);
+    
+            header("Location: http://www.yooz.ir");
+        }
+        /* End of spam detection */
+        /* Email given from DB */
+        $primaryEmail = 'alex.mavlin@triaconst.cz';
+        $to = $primaryEmail;
+
+        $fromName = "Ильвира Рахманова - Сайт";
+        $fromMail = "ellaprague@ellaprague.triaconst.cz";
+        $date = date(DATE_RFC2822);
+        $subject = "Новая заявка с сайта ellaprague";
+        $subject = '=?utf-8?b?'. base64_encode($subject) .'?=';
+        $messageId='<'.time().'-'.md5($fromMail.$to).'@'.$_SERVER['SERVER_NAME'].'>';
+        $message =  "Поступила новая завка на вашем сайте:<br><br>" .  
+                    "Имя пользователя: " . $messageName . ".<br>"; 
+        if(!empty($_POST['email'])){
+            $message .= "Email: " . $messageEmail . ".<br>"; 
+        } else {
+            $message .= "Пользователь не указал Email" . ".<br>"; 
+        }
+        $message .= "Номер телефона: " . $messagePhone . "<br><br>" . 
+                    "Сообщение:<br>" . $messageText;
+
+        /* Headers */
+        $headers = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+        $headers .= "From: " . $fromName . "<" . $fromMail . "> \r\n";
+        $headers .= "Reply to: " . $fromName . "\r\n";
+        $headers .= "Date: ". $date ." \r\n";
+        $headers .= "Message-ID: ". $messageId ." \r\n";
+
+        /* Sending message */
+        $resultMail = mail($to, $subject, $message, $headers);
+
+        /* Adding new line in MessageStats DB && Redirecting to thankyou page */
+        if ($resultMail){
+            if (isset($_GET['utm_source'])){
+                $source = $_GET['utm_source'];
+                $medium = $_GET['utm_medium'];
+                $campaign = $_GET['utm_campaign'];
+                $keyword = $_GET['utm_term'];
+
+                $statCase = R::dispense('messagestats');
+                    $statCase->name = $messageName;
+                    if (!empty($messageEmail)){
+                        $statCase->email = $messageEmail;
+                    }
+                    $statCase->phone = $messagePhone;
+                    $statCase->message = $messageText;
+                    $statCase->source = $source;
+                    $statCase->medium = $medium;
+                    $statCase->campaign = $campaign;
+                    $statCase->keyword = $keyword;
+                $statsResult = R::store($statCase);
+            } elseif(isset($_SERVER['HTTP_REFERER'])) {
+                $statCase = R::dispense('messagestats');
+                    $statCase->name = $messageName;
+                    if (!empty($messageEmail)){
+                        $statCase->email = $messageEmail;
+                    }
+                    $statCase->phone = $messagePhone;
+                    $statCase->message = $messageText;
+                    $statCase->source = $_SERVER['HTTP_REFERER'];
+                $statsResult = R::store($statCase);
+            } else {
+                $statCase = R::dispense('messagestats');
+                    $statCase->name = $messageName;
+                    if (!empty($messageEmail)){
+                        $statCase->email = $messageEmail;
+                    }
+                    $statCase->phone = $messagePhone;
+                    $statCase->message = $messageText;
+                    $statCase->source = "Direct";
+                $statsResult = R::store($statCase);
+            }
+            $_SESSION['success'][] = ['title' => 'Спасибо! Ваше сообщение отправлено! Я отвечу Вам как можно скорее.'];
+            
+        }
+    } else {
+    }
+}
 
 
 
 require ROOT . 'templates/_parts/_head.tpl';
 
-require ROOT . 'templates/main/main.tpl';
+require_once ROOT . 'templates/main/main.tpl';
 
 require ROOT . 'templates/_parts/_footer.tpl';
 require ROOT . 'templates/_parts/_foot.tpl';
+
+if (!empty($_SESSION['errors'])){
+    $_SESSION['errors'] = array();
+}
+if (!empty($_SESSION['success'])){
+    $_SESSION['success'] = array();
+}

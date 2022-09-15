@@ -14,11 +14,11 @@
                     </ul>
                 </nav>
                 <div class="header__phone">
-                    <a href="tg://resolve?domain=ellaprague" class="header__phone--social"
+                    <a href="<?=HOST?>messendger?target=telegram" class="header__phone--social"
                         style="background-image: url('img/mainContent/telegramIcon.svg');"></a>
-                    <a href="https://wa.me/420777655867" class="header__phone--social"
+                    <a href="<?=HOST?>messendger?target=whatsapp" class="header__phone--social"
                         style="background-image: url('img/mainContent/whatsappIcon.svg');"></a>
-                    <a href="viber://chat?number=%2B420777655867" class="header__phone--social"
+                    <a href="<?=HOST?>messendger?target=viber" class="header__phone--social"
                         style="background-image: url('img/mainContent/viberIcon.svg');"></a>
                     <form action="" class="header__phone--form">
                         <a href="<?=$navLink['header_phone']['link']?>" class="header__phone--number">+420 777 655 867</a>

@@ -43,7 +43,8 @@ li{
     padding: 0;
 }
 
-.errorrMsg{
+.errorrMsg,
+.successMsg{
     padding: 9px;
     max-width: 400px;
     width: 100%;
@@ -53,7 +54,11 @@ li{
     @include mon400;
     font-size: 14px;
     color: $textWhite;
+    margin: 0 auto;
     margin-bottom: 20px;
+}
+.successMsg{
+    background-color: #0acc54;
 }
 
 .section__heading{
@@ -202,6 +207,22 @@ li{
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+// Charts
+.admin__chratWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.admin__chart--devicesChart,
+.admin__chart--devicesChart__wide{
+    width: 400px;
+    height: 250px !important;
+    border-radius: 10px;
+}
+.admin__chart--devicesChart__wide{
+    width: 100%;
+    margin-bottom: 30px;
 }
 
 /* Pagination styles */

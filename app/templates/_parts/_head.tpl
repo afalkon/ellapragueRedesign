@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/libs.min.css">
     <link rel="stylesheet" href="css/style.min.css">
     <title>Ильвира Рахманова - <?=$pageTitle?></title>
+
 </head>
 
 <body>

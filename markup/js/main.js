@@ -7,7 +7,6 @@ $(document).ready(function(){
     // Tabs for "Tours" section
     $('.tours__tabs--button').click(function(){
       var elemid = $(this).attr('id');
-      console.log(elemid);
       $('.tours__tabs--button').removeClass('active').eq($(this).index()).addClass('active');
       $('.tours__tab').removeClass('active').eq($(this).index()).addClass('active');
     });
@@ -46,7 +45,16 @@ $(document).ready(function(){
           $('.header').removeClass('active');
         }
       });
+    }); 
+
+    // Getting button-tour id for contacts
+    $('.tours__tabs--slide__link').click(function(){
+      var dataId = $(this).attr("data-id");
+      $('#contactsTourSelection').attr('value', dataId);
+
+      var result = $('#contactsTourSelection').attr("value");
+      console.log(result);
     });
     // jQuery methods go here...
-  
+    
   });
