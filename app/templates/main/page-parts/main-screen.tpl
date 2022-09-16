@@ -27,6 +27,6 @@
                 <div class="header__burger"><span></span></div>
             </header>
             <h1 class="mainScreen__heading"><?=$mainScreenText['main_heading']?></h1>
-            <a href="" class="mainScreen__button">Заказать</a>
+            <a href="#contacts" class="mainScreen__button">Напишите мне</a>
         </div>
     </section>

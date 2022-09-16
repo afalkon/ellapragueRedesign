@@ -85,6 +85,12 @@ li{
     justify-content: space-between;
     align-items: center;
 }
+.admin__form--heading{
+    @include mon600;
+    font-size: 16px;
+    color: $textGrey;
+    margin-bottom: 30px;
+}
 .admin__form{
     display: flex;
     flex-direction: column;

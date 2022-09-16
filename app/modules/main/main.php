@@ -3,21 +3,7 @@
 $pageTitle = 'Индивидуальный гид';
 
 
-
-// Statistics into session
-if (isset($_GET['utm_source'])){
-    if(empty($_SESSION['google_ads'])){
-        $_SESSION['google_ads'] =     ['utm_source' => $_GET['utm_source'],
-                                        'utm_medium' => $_GET['utm_medium'],
-                                        'utm_campaign' => $_GET['utm_campaign'],
-                                        'utm_term' => $_GET['utm_term']];
-    }
-} elseif (isset($_SERVER['HTTP_REFERER'])){
-    if(empty($_SESSION['HTTP_REFERER'])){
-        $_SESSION['HTTP_REFERER'] = $_SERVER['HTTP_REFERER'];
-    }
-    
-}
+require_once ROOT . 'libs/visit-counter.php';
 
 
 // Getting all tours categories
@@ -47,6 +33,12 @@ if (isset($_POST['submit'])){
     }
     $messagePhone = htmlspecialchars(trim($_POST['phone']));
     $messageText = htmlspecialchars(trim($_POST['text']));
+    if (!empty($_POST['selectedTour'])){
+        $selectedTourId = $_POST['selectedTour'];
+
+        $selectedTourBean = R::load('alltours', $selectedTourId);
+        $selectedTourName = $selectedTourBean['tourname'];
+    }
 
 
 
@@ -87,8 +79,12 @@ if (isset($_POST['submit'])){
         } else {
             $message .= "Пользователь не указал Email" . ".<br>"; 
         }
-        $message .= "Номер телефона: " . $messagePhone . "<br><br>" . 
-                    "Сообщение:<br>" . $messageText;
+        $message .= "Номер телефона: " . $messagePhone . "<br><br>";
+        if(!empty($_POST['selectedTour'])){
+            $message .= "Выбранная экскурсия: " . $selectedTourName . "<br><br>";
+        }
+        $message .= "Сообщение:<br>" . $messageText;       
+                    
 
         /* Headers */
         $headers = 'MIME-Version: 1.0' . "\r\n";
@@ -120,6 +116,9 @@ if (isset($_POST['submit'])){
                     $statCase->medium = $medium;
                     $statCase->campaign = $campaign;
                     $statCase->keyword = $keyword;
+                    if(!empty($selectedTourName)){
+                        $statCase->selected_tour = $selectedTourName;
+                    }
                 $statsResult = R::store($statCase);
             } elseif(isset($_SERVER['HTTP_REFERER'])) {
                 $statCase = R::dispense('messagestats');
@@ -130,6 +129,9 @@ if (isset($_POST['submit'])){
                     $statCase->phone = $messagePhone;
                     $statCase->message = $messageText;
                     $statCase->source = $_SERVER['HTTP_REFERER'];
+                    if(!empty($selectedTourName)){
+                        $statCase->selected_tour = $selectedTourName;
+                    }
                 $statsResult = R::store($statCase);
             } else {
                 $statCase = R::dispense('messagestats');
@@ -140,6 +142,9 @@ if (isset($_POST['submit'])){
                     $statCase->phone = $messagePhone;
                     $statCase->message = $messageText;
                     $statCase->source = "Direct";
+                    if(!empty($selectedTourName)){
+                        $statCase->selected_tour = $selectedTourName;
+                    }
                 $statsResult = R::store($statCase);
             }
             $_SESSION['success'][] = ['title' => 'Спасибо! Ваше сообщение отправлено! Я отвечу Вам как можно скорее.'];

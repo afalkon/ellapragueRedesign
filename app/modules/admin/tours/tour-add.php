@@ -1,6 +1,7 @@
 <?php
 
 
+if(isset($_SESSION['logged_user']) && $_SESSION['logged_user']['role'] == 'admin'){
 $pageTitle = 'Добавление экскурсии';
 
 $destinations = R::getAll('SELECT id, cat_name FROM tourscat');
@@ -54,3 +55,6 @@ include ROOT . 'templates/_parts/_foot.tpl';
 
 $_SESSION['errors'] = array();
 $_SESSION['success'] = array();
+} else {
+    header("Location: " . HOST);
+}

@@ -42,6 +42,9 @@ switch ($uri[0]){
     case 'lost-password':
         require_once ROOT . "modules/login/lost-password.php";
         break;
+    case 'logout':
+        require_once ROOT . "modules/login/logout.php";
+        break;
     
     // ::::::::::::::: Admin page Routes :::::::::::::::
     case 'admin':
@@ -104,6 +107,26 @@ switch ($uri[0]){
         break;
     case 'messendger-stats':
         require_once ROOT . "modules/admin/messendgers/messendger-stats.php";
+        break;
+
+    // ::::::::::::::: Text Edit page Routes :::::::::::::::
+    case 'text-edit':
+        require_once ROOT . "modules/admin/text-edit/text-edit.php";
+        break;
+    case 'mainScreen-edit':
+        require_once ROOT . "modules/admin/text-edit/mainScreen-edit.php";
+        break;
+    case 'tours-edit':
+        require_once ROOT . "modules/admin/text-edit/tours-edit.php";
+        break;
+    case 'individual-route-edit':
+        require_once ROOT . "modules/admin/text-edit/individual-route-edit.php";
+        break;
+    case 'about-edit':
+        require_once ROOT . "modules/admin/text-edit/about-edit.php";
+        break;
+    case 'contacts-edit':
+        require_once ROOT . "modules/admin/text-edit/contacts-edit.php";
         break;
     
     default:

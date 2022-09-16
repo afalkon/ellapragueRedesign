@@ -103,6 +103,14 @@ li {
   align-items: center;
 }
 
+.admin__form--heading {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #595757;
+  margin-bottom: 30px;
+}
+
 .admin__form {
   display: flex;
   flex-direction: column;
@@ -1139,6 +1147,7 @@ li {
   font-weight: 600;
   text-transform: uppercase;
   color: #f2f0f0;
+  cursor: pointer;
 }
 .contacts__thirdParty {
   max-width: 820px;

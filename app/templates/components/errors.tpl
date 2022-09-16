@@ -11,5 +11,6 @@ if (!empty($_SESSION['errors'])) {
         <?php
         }
     }
+    $_SESSION['errors'] = array();
 }
 ?>

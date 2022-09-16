@@ -7,8 +7,7 @@
                 <ul class="sidebar__nav--ul">
                     <li class="sidebar__nav--li"><a href="<?=HOST?>admin" class="sidebar__nav--link">Админ панель</a></li>
                     <li class="sidebar__nav--li"><a href="" class="sidebar__nav--link">Настройки аккаунта</a></li>
-                    <li class="sidebar__nav--li"><a href="" class="sidebar__nav--link">Правка текстов</a></li>
-                    <li class="sidebar__nav--li"><a href="" class="sidebar__nav--link">Правка меню</a></li>
+                    <li class="sidebar__nav--li"><a href="<?=HOST?>text-edit" class="sidebar__nav--link">Правка текстов</a></li>
                     <li class="sidebar__nav--li">
                         <a href="<?=HOST?>messages" class="sidebar__nav--link">Сообщения
 
@@ -27,7 +26,7 @@
                         </a></li>
                     <li class="sidebar__nav--li"><a href="<?=HOST?>alltours" class="sidebar__nav--link">Экскурсии</a></li>
                     <li class="sidebar__nav--li"><a href="<?=HOST?>destinations" class="sidebar__nav--link">Направления</a></li>
-                    <li class="sidebar__nav--li"><a href="" class="sidebar__nav--link">Выход</a></li>
+                    <li class="sidebar__nav--li"><a href="<?=HOST?>logout?action=logout" class="sidebar__nav--link">Выход</a></li>
                 </ul>
             </nav>
         </section>

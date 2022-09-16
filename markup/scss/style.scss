@@ -693,6 +693,7 @@
         @include mon600;
         text-transform: uppercase;
         color: $textWhite;
+        cursor: pointer;
     }
     &__thirdParty{
         max-width: 820px;

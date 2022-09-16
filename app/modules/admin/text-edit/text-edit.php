@@ -1,15 +1,20 @@
 <?php
 
 if(isset($_SESSION['logged_user']) && $_SESSION['logged_user']['role'] == 'admin'){
-$pageTitle = 'Все отзывы';
 
-$allReviews = R::getAll('SELECT * FROM reviews ORDER BY id DESC');
-$unreadReviewsNum = R::count('reviews', 'unread = ?', [1]);
+$pageTitle = 'Редактирование текстов';
+
+$mainScreen = R::find('texts', 'section LIKE ?', ['main_screen']);
+
+foreach($mainScreen as $position){
+    $mainScreenBlock[$position['position']] = $position['value'];
+}
+
 
 
 
 ob_start();
-include ROOT . 'templates/admin/reviews/reviews-all.tpl';
+include ROOT . 'templates/admin/text-edit/text-edit.tpl';
 $content = ob_get_contents();
 ob_end_clean();
 

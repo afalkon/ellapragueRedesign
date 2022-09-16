@@ -4,12 +4,7 @@
             <p class="contacts__desc"><?=$contactsScreenText['contacts_main_desc']?></p>
 
             <?php include_once ROOT . 'templates/components/errors.tpl'; ?>
-            
-            <?php if(!empty($_SESSION['success'])): ?>
-                <?php foreach($_SESSION['success'] as $success): ?>
-                    <div class="successMsg"><?=$success['title']?></div>
-                <?php endforeach; ?>
-            <?php endif; ?>
+            <?php include_once ROOT . 'templates/components/success.tpl'; ?>
             
 
             <form action="<?=HOST?>#contacts" id="contactform" class="contacts__form" method="POST">
@@ -53,7 +48,12 @@
                         }
                     </script>
 
+            <?php if(!empty($_POST['selectedTour'])): ?>
+                <input id="contactsTourSelection" type="hidden" name="selectedTour" value="<?=$_POST['selectedTour']?>">
+            <?php else: ?>
                 <input id="contactsTourSelection" type="hidden" name="selectedTour" value="">
+            <?php endif; ?>
+
                 <button type="submit" name="submit" class="contacts__form--submit">Отправить гиду</button>
             </form>
             <div class="contacts__thirdParty"><?=$contactsScreenText['contacts_expl']?></div>

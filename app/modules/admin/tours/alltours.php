@@ -1,5 +1,6 @@
 <?php
 
+if(isset($_SESSION['logged_user']) && $_SESSION['logged_user']['role'] == 'admin'){
 
 $pageTitle = 'Все направления';
 
@@ -23,3 +24,7 @@ include ROOT . 'templates/_parts/_foot.tpl';
 
 $_SESSION['errors'] = array();
 $_SESSION['success'] = array();
+
+} else {
+    header("Location: " . HOST);
+}

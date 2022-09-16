@@ -12,8 +12,14 @@
                     <div class="reviewBottom__slide--photo"
                         style="background-image: url('<?=HOST?>img/userContent/avatars/<?=$review['avatar']?>');"></div>
                     <div class="reviewBottom__slide--name"><?=$review['name']?></div>
-                    <p class="reviewBottom__slide--text"><?=$review['review']?></p>
-                    <div class="reviewBottom__slide--date"><?=$review['date']?></div>
+
+
+                    <?php $reviewShort = mb_substr($review['review'], 0, 300) ?>
+                    <p class="reviewBottom__slide--text"><?=$reviewShort?><?php echo strlen($review['review']) > strlen($reviewShort) ? '...' : ''; ?></p>
+
+
+
+                    <div class="reviewBottom__slide--date"><?=rus_date("F Y", $review['date'])?></div>
 
                     <?php $reviewDestinations = R::load('reviews', $review['id']); ?>
                     

@@ -1,6 +1,6 @@
 <?php
 
-
+if(isset($_SESSION['logged_user']) && $_SESSION['logged_user']['role'] == 'admin'){
 if (isset($_GET['target']) && $_GET['target'] == 'telegram'){
     $newLead = R::dispense('messendgers');
 
@@ -58,4 +58,8 @@ if (isset($_GET['target']) && $_GET['target'] == 'telegram'){
     R::store($newLead);
     header("Location: viber://chat?number=%2B420777655867");
 
+}
+
+} else {
+    header("Location: " . HOST);
 }
