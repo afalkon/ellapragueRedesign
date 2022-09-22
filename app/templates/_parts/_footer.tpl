@@ -1,6 +1,7 @@
     <footer class="footer">
         <div class="container">
-            <nav class="footer__nav">
+            <nav>
+                <ul class="footer__nav">
                 <li class="footer__nav--li">
                     <a href="<?=HOST . $navLink['footer_first']['link']?>" class="footer__nav--link"><?=$navLink['footer_first']['linkName']?></a>
                 </li>
@@ -21,7 +22,7 @@
                         <a href="<?=HOST . $navLink['footer_fourth']['link']?>" class="footer__nav--link"><?=$navLink['footer_fourth']['linkName']?></a>
                     </li>
                 <?php endif; ?>    
-
+                </ul>
             </nav>
             <p class="footer__extensions">© 2018 Русский гид в Праге - Ильвира Рахманова. Все права на тексты и фото
                 принадлежат его автору, если не указано иное. Полное использование материалов запрещено. Частичное

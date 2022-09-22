@@ -1,9 +1,11 @@
     <section id="reviews" class="reviewTop">
+    <h2 class="invisible-heading">Отзывы - индивидуальный гид в Праге и Чехии на русском языке</h2>
         <div class="container">
-            <h2 class="section__heading"><?=$reviewsScreenText['reviews_main_heading']?></h2>
+            <h3 class="section__heading"><?=$reviewsScreenText['reviews_main_heading']?></h3>
         </div>
     </section>
     <section class="reviewBottom">
+    <h2 class="invisible-heading">Отзывы - индивидуальный гид в Праге и Чехии на русском языке</h2>
         <div class="container">
             <div class="reviewBottom__slider">
 

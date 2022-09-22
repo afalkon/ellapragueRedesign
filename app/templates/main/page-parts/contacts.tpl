@@ -1,4 +1,4 @@
-    <setion id="contacts" class="contacts" style="background-image: url(img/mainContent/contactsBg.jpg);">
+    <div id="contacts" class="contacts" style="background-image: url(img/mainContent/contactsBg.jpg);">
         <div class="container">
             <h2 class="contacts__heading"><?=$contactsScreenText['contacts_main_heading']?></h2>
             <p class="contacts__desc"><?=$contactsScreenText['contacts_main_desc']?></p>
@@ -40,7 +40,7 @@
                 <input type="hidden" id="keyUpCount" name="keyUpCount" value="0">
             <?php endif; ?>
                     
-                    <script type="text/javascript">
+                    <script>
                         var ct = 0;
       
                         function keycount(){
@@ -54,9 +54,9 @@
                 <input id="contactsTourSelection" type="hidden" name="selectedTour" value="">
             <?php endif; ?>
 
-                <button type="submit" name="submit" class="contacts__form--submit">Отправить гиду</button>
+                <button type="submit" name="submit" class="contacts__form--submit" onclick="gtag_report_conversion()">Отправить гиду</button>
             </form>
             <div class="contacts__thirdParty"><?=$contactsScreenText['contacts_expl']?></div>
             <p class="contacts__call"><?=$contactsScreenText['contacts_call']?></p>
         </div>
-    </setion>
+    </div>

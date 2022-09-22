@@ -1,4 +1,5 @@
     <section class="mainScreen" style="background-image: url('<?=HOST?>img/mainContent/mainScreenBg.jpg');">
+        <h1 class="invisible-heading">Индивидуальный гид в Праге и Чехии</h1>
         <div class="container">
             <header class="header">
                 <a href="<?=HOST?>" class="header__logo">
@@ -20,13 +21,11 @@
                         style="background-image: url('img/mainContent/whatsappIcon.svg');"></a>
                     <a href="<?=HOST?>messendger?target=viber" class="header__phone--social"
                         style="background-image: url('img/mainContent/viberIcon.svg');"></a>
-                    <form action="" class="header__phone--form">
-                        <a href="<?=$navLink['header_phone']['link']?>" class="header__phone--number">+420 777 655 867</a>
-                    </form>
+                    <a href="<?=$navLink['header_phone']['link']?>" class="header__phone--number">+420 777 655 867</a>
                 </div>
                 <div class="header__burger"><span></span></div>
             </header>
-            <h1 class="mainScreen__heading"><?=$mainScreenText['main_heading']?></h1>
+            <h2 class="mainScreen__heading"><?=$mainScreenText['main_heading']?></h2>
             <a href="#contacts" class="mainScreen__button">Напишите мне</a>
         </div>
     </section>

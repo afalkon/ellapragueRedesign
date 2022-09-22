@@ -9,9 +9,9 @@ if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on'){
 
 
 //DB settings
-define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'triaconstcz02');
-define('DB_USER', 'triaconstcz002');
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'ellapragueredesign');
+define('DB_USER', 'root');
 define('DB_PASS', 'A9101104265falkon');
 
 define('HOST', $protocol . $_SERVER['HTTP_HOST'] . '/');

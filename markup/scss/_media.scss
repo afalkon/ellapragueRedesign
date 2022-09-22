@@ -617,8 +617,18 @@
         font-size: 40px;
         color: $textGrey;
     }
+    .header__phone{
+        align-items: center;
+        a + a{
+            margin-left: 3px;
+        }
+    }
     .header__phone--social{
-        display: none;
+        width: 15px;
+        height: 15px;
+        &:nth-child(3){
+            display: none;
+        }
     }
     .tours__top{
         flex-direction: column;

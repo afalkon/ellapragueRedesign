@@ -16,13 +16,13 @@
             <div class="tours__tabs--top">
 
             <?php foreach($toursCats as $toursCat): ?>
-                <div id="<?=$toursCat['id']?>" class="tours__tabs--button"><?=$toursCat['cat_name']?><span></span></div>
+                <div class="tours__tabs--button"><?=$toursCat['cat_name']?><span></span></div>
             <?php endforeach; ?>
             </div>
             <div class="tours__tabs--bottom">
 
             <?php foreach($toursCats as $toursCat): ?>
-                <div id="<?=$toursCat['id']?>" class="tours__tab"
+                <div class="tours__tab"
                     style="background-image: url('<?=HOST?>img/mainContent/<?=$toursCat['background']?>');">
                     <h3 class="tours__tabs--heading"><?=$toursCat['cat_heading']?></h3>
                     <!--  Slider  -->

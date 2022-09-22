@@ -54,6 +54,11 @@ li {
   padding: 0;
 }
 
+.invisible-heading {
+  font-size: 0;
+  line-height: 0px;
+}
+
 .errorrMsg,
 .successMsg {
   padding: 9px;
@@ -2119,7 +2124,17 @@ li {
     font-size: 40px;
     color: #595757;
   }
+  .header__phone {
+    align-items: center;
+  }
+  .header__phone a + a {
+    margin-left: 3px;
+  }
   .header__phone--social {
+    width: 15px;
+    height: 15px;
+  }
+  .header__phone--social:nth-child(3) {
     display: none;
   }
   .tours__top {

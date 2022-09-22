@@ -1,4 +1,5 @@
     <section id="about" class="about">
+    <h2 class="invisible-heading">Лицензированный индивидуальный гид в Праге и Чехии</h2>
         <div class="container">
             <div class="about__inner">
                 <article class="about__content">

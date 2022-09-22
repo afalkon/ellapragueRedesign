@@ -6,7 +6,6 @@ $(document).ready(function(){
 
     // Tabs for "Tours" section
     $('.tours__tabs--button').click(function(){
-      var elemid = $(this).attr('id');
       $('.tours__tabs--button').removeClass('active').eq($(this).index()).addClass('active');
       $('.tours__tab').removeClass('active').eq($(this).index()).addClass('active');
     });
